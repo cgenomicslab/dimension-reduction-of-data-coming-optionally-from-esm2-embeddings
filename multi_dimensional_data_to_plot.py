@@ -3,8 +3,8 @@ from two_dimensions_to_plot import *
 
 if __name__=='__main__':
 
-    pt_folder=input("write the relative name of the data folder")#"output_tensors_rLws"#the folder of the data
-    parent_folder=input("write the whole name of the parent folder")#"/home/gtzormpatzakis/Documents.cglab/Projects/dataset/"
+    pt_folder=input("write the relative name of the data folder")#the folder of the data
+    parent_folder=input("write the whole name of the parent folder")
     tensor_list,name_list=create_array2(pt_folder,parent_folder)# a list of the input tensors and another with their names
     while True:
         method=input("write umap,t-sne or pca to use the corresponding dimension reduction method")
@@ -30,22 +30,28 @@ if __name__=='__main__':
     colors_list=[]
     chosen_library=input("write plt to save the plot in a .svg file or write plotly to see an interactive plot")
     #folder_name=input("insert the name of the folder that contains the files of categorization")
-    markers_bool=input("write 1 to have markers or 0 for no markers")
-    if markers_bool=='1':
-        marker_folder=input('copy the relative path to the folder with the different .txt files')
+
     
-    colorsbool=input("write 1 to read from a file with lines on format <<name color type>> or 0 to read from a file with only the types ")
+    colorsask=input("write 1 to read from a file with lines on format <<name color type>> 2 to read from a file with only the types and 0 to not show any color")
     if (input('write 1 if you want as name only the part before the dot or 0 to take the whole name')=='1'):split_bool=True
     else: split_bool=False
 
-    if colorsbool=='1':
+    if colorsask=='1':
         file_name=input('write the whole path to the .txt file that contains the colors and the categories of different data points')
         typetocolordict,nametotypedict= color_file_to_dicts(file_name,split_in_point=split_bool)
-    else:
+    elif colorsask=='2':
         #split_bool=bool(input('write 1 if you want to take the name only from before the first point or 0 to take the whole name'))
         file_name=input('write the whole path to the .txt file that contains the categories of different data points')     
         typetocolordict,colors_list=non_color_file_to_list(file_name,name_list,split_in_point=split_bool)
+    else: 
+        colors_list=['#663399' for _ in range(len(name_list))]
+        typetocolordict={"all":"#663399"}
+        for name in name_list: nametotypedict[name.split(".")[0]]="all"
     #wherecolors=input("write 0 to take the colors from a different file, 1 to pick a couple of")
+    
+    markers_bool=input("write 1 to have markers or 0 for no markers")
+    if markers_bool=='1':
+        marker_folder=input('copy the relative path to the folder with the different .txt files')
     name_set=set(name_list)
 
     name_dict={}
