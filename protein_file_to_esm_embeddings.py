@@ -1,4 +1,3 @@
-
 from read_fasta1 import fasta_to_list
 from torch import no_grad
 from torch import save as torch_save
@@ -20,7 +19,7 @@ if __name__=='__main__':
 
     file1=input("insert the name of the protein file")
     protein_list=fasta_to_list(file1) #returns a list of all the proteins from the file.Each item in protein_list has an index number, a list spliting the name of the protein in each dot and a string of the sequence of the protein
-    output_file=input("insert the whole name of the output file")
+    output_folder=input("insert the whole name of the output folder")
 
     # Load ESM-2 model
     model, alphabet = esm.pretrained.esm2_t33_650M_UR50D()
@@ -30,5 +29,5 @@ if __name__=='__main__':
     #check_name=protein_list[0][1][0]
     for i in range(len(protein_list)):#for every protein saves in the chosen file a different .pt file with the name of the protein as the name of the file and the tensor of the protein as the content of the file
         #tensors_list.append(protein_tensor(('.'.join(protein_list[i][1]),protein_list[i][2]),model,alphabet,batch_converter))
-        torch_save(protein_tensor(('.'.join(protein_list[i][1]),protein_list[i][2]),model,alphabet,batch_converter),output_file+"/"+str('.'.join(protein_list[i][1]))+'.pt')
+        torch_save(protein_tensor(('.'.join(protein_list[i][1]),protein_list[i][2]),model,alphabet,batch_converter),output_folder+"/"+str('.'.join(protein_list[i][1]))+'.pt')
 
