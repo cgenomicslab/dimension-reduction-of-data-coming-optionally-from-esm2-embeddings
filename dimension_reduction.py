@@ -5,8 +5,7 @@ import umap
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
-# import seaborn as sns
-# import matplotlib.pyplot as plt
+
 import pandas as pd
 
 
