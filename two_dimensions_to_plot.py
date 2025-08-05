@@ -53,7 +53,7 @@ def color_file_to_dicts(file_name,split_in_point=False):# returns two dictionari
     return typetocolordict,nametotypedict
 
 def non_color_file_to_list(file_name,name_list,split_in_point=False):
-        color_dict={"unknown":"888888"}
+        color_dict={"unknown":"#888888"}
         while True:
             try:
                 inp=input("write colon seperated the type and the hexc code of the color (eg neuro:#663399) or write stop to finish the dictionary")
@@ -162,6 +162,7 @@ def color_plot_to_plotly(name_list:list,colors_list:list,embedding:list,plot_tit
 
     fig = go.Figure()
     inv_color_dict= {v: k for k, v in typetocolordict.items()}#inverse color_dict
+    print(inv_color_dict)
     for color in df['color'].unique():#for every different color
         group_df = df[(df['color'] == color)]#a smaller dataframe with the points with the same color
         if not group_df.empty:
@@ -200,7 +201,7 @@ def color_plot_to_plt(colors_list:list,embedding:list,plot_title:str,typetocolor
     plt.gca().set_aspect('equal', 'datalim')
     plt.title(plot_title, fontsize=24)
     #plt.show()
-    plt.legend(handles=legend_elements, title='Protein Type', loc='best')
+    plt.legend(handles=legend_elements, title=' Type', loc='best')
     plt.savefig(parent_folder+"/"+save_title+".svg", dpi=300, bbox_inches='tight')
 
 def color_and_marker_plot_to_plt(name_list,markers_list,marker_dict,embedding,plot_title,nametotypedict,typetocolordict,save_title,parent_folder):
@@ -224,7 +225,7 @@ def color_and_marker_plot_to_plt(name_list,markers_list,marker_dict,embedding,pl
             )   
         plt.gca().set_aspect('equal', 'datalim')
         plt.title(plot_title, fontsize=24)
-        plt.legend(handles=legend_elements+color_legend, title='Protein Type', bbox_to_anchor=(1.05, 0))
+        plt.legend(handles=legend_elements+color_legend, title=' Type', bbox_to_anchor=(1.05, 0))
         plt.savefig(parent_folder+"/"+save_title+".svg", dpi=300, bbox_inches='tight')
 
 def color_and_marker_plot_to_plotly(name_list,markers_list,embedding,plot_title,marker_dict,nametotypedict,typetocolordict):# simple because the markers are predetermined. Only the color changes
