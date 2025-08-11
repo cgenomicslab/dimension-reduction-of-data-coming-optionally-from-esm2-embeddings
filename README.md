@@ -49,12 +49,21 @@ multi_dimensional_data_to_plot.py uses the dimension_reduction.py file to reduce
 ### t-sne with different markers and the same color
 <img width="569" height="554" alt="tsne_42 0" src="https://github.com/user-attachments/assets/ed3ae1e1-208d-483d-b472-fd1d11787520" />
 
+ This is plotted using matplotlib.pyplot. The .png file of the plot can be found here:
+ https://github.com/cgenomicslab/dimension-reduction-of-data-coming-optionally-from-esm2-embeddings/blob/main/examples/tsne_42.0.png
+ 
 ### principal component analysis with different colors
 <img width="777" height="598" alt="pca_only_colors" src="https://github.com/user-attachments/assets/08f6c73d-c78c-4a11-bccf-bbbd21321c9d" />
+
+This is plotted using plotly. The html file with the interactive plot can be found here:
+https://github.com/cgenomicslab/dimension-reduction-of-data-coming-optionally-from-esm2-embeddings/blob/main/examples/pca_humans.html
 
 ### umap with color and markers
 <img width="1101" height="672" alt="umap_30_0_manhattan" src="https://github.com/user-attachments/assets/1aa433e4-be44-4168-be42-450ba7fc609b" />
 
+This is plotted using matplotlib.pyplot. The .png file of the diagram can be found here: https://github.com/cgenomicslab/dimension-reduction-of-data-coming-optionally-from-esm2-embeddings/blob/main/examples/umap_30_0_manhattan.png
+
+And the .svg file can be found here: https://github.com/cgenomicslab/dimension-reduction-of-data-coming-optionally-from-esm2-embeddings/blob/main/examples/umap_30_0_manhattan.svg
 ## Credits
 This code is developed using Torch, Matplotlib, SciKit Learn, pandas, fasta-reader, numpy and plotly. It also uses Umap and ESM. Special thanks to the contributors of these libraries.
 
