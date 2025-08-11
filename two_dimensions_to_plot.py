@@ -148,7 +148,7 @@ def dict_to_color_list(name_list,typetocolordict,nametotypedict,split_in_point=F
 def plot_title(method:str,variable_list:list):#returns the title of the plot and part of the name of the file to save the graph if this option is chosen
     if method=="pca":return "Principal Component Analysis","pca"
     elif method=='t-sne':return "T-sne method with "+str(variable_list[0])+" perplexity","tsne_"+str(variable_list[0])
-    else:return "U-map plot with "+str(variable_list[0])+" neighbors, "+str(variable_list[1])+" min_dist and "+ str(variable_list[2])+" metric",str(variable_list[0])+"_"+str(int(10*variable_list[1]))+'_'+variable_list[2]
+    else:return "U-map plot with "+str(variable_list[0])+" neighbors, "+str(variable_list[1])+" min_dist and "+ str(variable_list[2])+" metric","umap "+str(variable_list[0])+"_"+str(int(10*variable_list[1]))+'_'+variable_list[2]
 
 def color_plot_to_plotly(name_list:list,colors_list:list,embedding:list,plot_title:str,typetocolordict:dict):# plots with the same markers and different colors from the color list
     pio.renderers.default = "browser"#the plot appears on the browser
