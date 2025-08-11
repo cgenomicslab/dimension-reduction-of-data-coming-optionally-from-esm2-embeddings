@@ -26,6 +26,7 @@ multi_dimensional_data_to_plot.py uses the dimension_reduction.py file to reduce
 
 1. The code will ask the user for the name of the fasta file (could be .fasta or .fa). The name should be given with the whole Path to the file.
 2. Then the code will ask for a folder to save the output tensors. Each tensor will have its own file with the name of the protein as the name of the file (without '.pt') and the tensor of the embeddings of the protein as the content of the file.
+
 <img width="245" height="412" alt="pt overview" src="https://github.com/user-attachments/assets/d46b1292-2200-48ea-9e64-041b054b2b1b" />
 
  As a result the folder will contain as many files as proteins in the given fasta file.
@@ -52,7 +53,7 @@ multi_dimensional_data_to_plot.py uses the dimension_reduction.py file to reduce
 <img width="777" height="598" alt="pca_only_colors" src="https://github.com/user-attachments/assets/08f6c73d-c78c-4a11-bccf-bbbd21321c9d" />
 
 ### umap with color and markers
-<img width="521" height="371" alt="cut_umap_50_02" src="https://github.com/user-attachments/assets/5bccf57b-ee77-4802-84e8-cd9c50d5e83e" />
+<img width="1101" height="672" alt="umap_30_0_manhattan" src="https://github.com/user-attachments/assets/1aa433e4-be44-4168-be42-450ba7fc609b" />
 
 ## Credits
 This code is developed using Torch, Matplotlib, SciKit Learn, pandas, fasta-reader, numpy and plotly. It also uses Umap and ESM. Special thanks to the contributors of these libraries.
